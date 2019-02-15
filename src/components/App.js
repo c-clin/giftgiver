@@ -18,10 +18,18 @@ class App extends Component {
     });
   };
 
+  renderGifts = () => {
+    return this.state.gifts.map(gift => {
+      return <div key={gift.id}>{gift.id}</div>;
+    });
+  };
+
   render() {
     return (
       <div>
         <h2>Gift Giver</h2>
+
+        <div className="gift-list">{this.renderGifts()}</div>
 
         <Button className="btn-add" onClick={this.addGift}>
           Add Gift
